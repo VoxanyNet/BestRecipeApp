@@ -1,4 +1,4 @@
-package com.example.portfolio2;
+package bestteam.bestrecipeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

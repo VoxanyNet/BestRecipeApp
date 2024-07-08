@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Portfolio 2"
+rootProject.name = "Best Recipe App"
 include(":app")
