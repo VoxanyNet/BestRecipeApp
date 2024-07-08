@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23316061591",
+    "project_id": "best-recipe-app",
+    "storage_bucket": "best-recipe-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23316061591:android:2826f70917d1d4f21638d2",
+        "android_client_info": {
+          "package_name": "bestteam.bestrecipeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkll5fRDag7g58uULDZVpWGyCq-9PZBQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
