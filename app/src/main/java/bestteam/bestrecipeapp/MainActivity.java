@@ -1,11 +1,15 @@
 package bestteam.bestrecipeapp;
 
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,6 +20,42 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        EditText editTextEmail = findViewById(R.id.editTextEmail);
+        EditText editTextPassword = findViewById(R.id.editTextPassword);
+
+        Button buttonLogin = findViewById(R.id.buttonLogin);
+        Button buttonSignUp = findViewById(R.id.buttonSignUp);
+
+        // register login button callback
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            // this is the callback
+            @Override
+            public void onClick(View view) {
+
+                // extract email and password from input text fields
+                String email = editTextEmail.getText().toString();
+                String password = editTextPassword.getText().toString();
+
+                // call the actual signIn function
+                signIn(email, password);
+            }
+        });
+
+        // register sign up button callback
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            // this is the callback
+            @Override
+            public void onClick(View view) {
+
+                // extract email and password from input text fields
+                String email = editTextEmail.getText().toString();
+                String password = editTextPassword.getText().toString();
+
+                // call the actual createAccount function
+                createAccount(email, password);
+            }
+        });
     }
 
     private void signIn(String email, String password) {

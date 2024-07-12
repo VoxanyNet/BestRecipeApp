@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editTextEmail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,26 +22,26 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editTextPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:hint="Password" app:layout_constraintHorizontal_bias="0.497"/>
+            android:hint="Password" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.523"/>
     <Button
             android:text="Login"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"
+            android:layout_height="wrap_content" android:id="@+id/buttonLogin"
             android:fontFamily="sans-serif-black"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:background="@color/blue" app:iconTint="#000000" android:textAlignment="center"
-            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintHorizontal_bias="0.498"/>
     <Button
             android:text="Sign Up"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button2"
+            android:layout_height="wrap_content" android:id="@+id/buttonSignUp"
             app:iconTint="#00FFFFFF" android:background="#00FFFFFF"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" android:textColor="#4B4B4B"
             android:fontFamily="sans-serif-condensed-light"
