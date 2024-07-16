@@ -1,8 +1,10 @@
 package bestteam.bestrecipeapp;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,8 @@ public class Register extends AppCompatActivity {
 
         Button buttonRegister = findViewById(R.id.loginButton);
 
+        TextView loginText = findViewById(R.id.loginText);
+
         // register sign up button callback
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             // this is the callback
@@ -37,6 +41,15 @@ public class Register extends AppCompatActivity {
 
                 // call the actual createAccount function
                 createAccount(email, password);
+            }
+        });
+
+        loginText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Register.this, SignIn.class);
+
+                startActivity(intent);
             }
         });
     }

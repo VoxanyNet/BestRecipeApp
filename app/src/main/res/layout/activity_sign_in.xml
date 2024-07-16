@@ -87,7 +87,7 @@
                 android:text="Register now"
                 android:textColor="#0000FF"
                 android:textSize="20sp"
-                android:layout_marginStart="4dp" android:textAlignment="center"/>
+                android:layout_marginStart="4dp" android:textAlignment="center" android:id="@+id/loginText"/>
     </LinearLayout>
 
     <!-- Social Media Login Buttons -->
