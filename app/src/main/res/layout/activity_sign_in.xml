@@ -5,8 +5,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:padding="16dp"
-              android:background="#FFFFFF"
-              tools:context=".MainActivity">
+              android:background="#FFFFFF">
 
     <!-- Header Section -->
     <ImageView
