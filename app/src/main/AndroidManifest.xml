@@ -13,14 +13,13 @@
             android:theme="@style/Theme.BestRecipeApp"
             tools:targetApi="31">
         <activity
-                android:name=".MainActivity"
+                android:name=".SignIn"
+                android:exported="true"/>
+        <activity
+                android:name=".Register"
                 android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
     </application>
 
 </manifest>
