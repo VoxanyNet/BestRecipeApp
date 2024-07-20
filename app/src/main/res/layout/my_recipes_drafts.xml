@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F8F8F8"
+                android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Recipes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
+
+    <!-- Tabs -->
+    <LinearLayout
+            android:id="@+id/tabsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/tvHeader"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/tabFavorites"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Favorites"
+                android:textSize="16sp"
+                android:textColor="#A0A0A0"
+                android:gravity="center"
+                android:padding="8dp" />
+
+        <TextView
+                android:id="@+id/tabDrafts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Drafts"
+                android:textSize="16sp"
+                android:textColor="#49454F"
+                android:gravity="center"
+                android:padding="8dp" />
+
+        <TextView
+                android:id="@+id/tabPosted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Posted"
+                android:textSize="16sp"
+                android:textColor="#9F9F9F"
+                android:gravity="center"
+                android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Empty State Image -->
+    <ImageView
+            android:id="@+id/ivEmptyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tabsLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/asset_2"/>
+
+    <!-- Empty State Text -->
+    <TextView
+            android:id="@+id/tvEmptyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivEmptyState"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Nothing here. For now."
+            android:textSize="18sp"
+            android:textColor="#A0A0A0" />
+
+    <TextView
+            android:id="@+id/tvEmptyStateSubtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEmptyState"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="This is where you'll find recipes you haven't posted yet."
+            android:textSize="14sp"
+            android:textColor="#A0A0A0" />
+
+    <!-- Post New Recipe Button -->
+    <Button
+            android:id="@+id/btnPostNewRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEmptyStateSubtext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Post New Recipe"
+            android:textSize="16sp"
+            android:backgroundTint="#007BFF"
+            android:textColor="#FFFFFF"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp" />
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <ImageView
+                android:id="@+id/navExplore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_explore_border"
+                android:tint="#D3D5DC"/>
+
+        <ImageView
+                android:id="@+id/navRecipes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_menu_book_border"
+                android:tint="#49454F" />
+
+        <ImageView
+                android:id="@+id/navProfile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/icon_profile_fill" />
+    </LinearLayout>
+
+</RelativeLayout>
