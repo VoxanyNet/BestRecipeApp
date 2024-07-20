@@ -8,18 +8,15 @@
               android:background="#FFFFFF">
 
     <!-- Header Section -->
-<<<<<<< Updated upstream:app/src/main/res/layout/activity_sign_in.xml
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="119dp" app:srcCompat="@drawable/logo" android:id="@+id/imageView"
             android:cropToPadding="true" android:adjustViewBounds="true"/>
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="226dp" app:srcCompat="@drawable/logo_decoration" android:id="@+id/imageView2"/><![CDATA[
-=======
-    >>>>>>> Stashed changes:app/src/main/res/layout/sign_in.xml
+            android:layout_height="226dp" app:srcCompat="@drawable/logo_decoration" android:id="@+id/imageView2"/>
 
-    ]]><!-- Welcome Text -->
+    <!-- Welcome Text -->
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
