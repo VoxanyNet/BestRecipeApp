@@ -17,21 +17,17 @@ public class Home extends AppCompatActivity {
 
         List<RecipePost> recipes = new ArrayList<RecipePost>();
 
-        recipes.add(
-                new RecipePost(
-                        "Example Title",
-                        "Author",
-                        "Description"
-                )
-        );
+        for (int i = 0; i < 100; i++) {
+            recipes.add(
+                    new RecipePost(
+                            "Example Title",
+                            "Author",
+                            "Description"
+                    )
+            );
+        }
 
-        recipes.add(
-                new RecipePost(
-                        "Example Title",
-                        "Author",
-                        "Description"
-                )
-        );
+
 
         // actually create the fragment
         ScrollableRecipePostsFragment fragment = new ScrollableRecipePostsFragment(recipes);
