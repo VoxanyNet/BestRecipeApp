@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Best Recipe App</string>
+    <string name="don_t_worry_you_ll_be_cooking_again_soon">DON\'T WORRY!</string>
+    <string name="email">Email</string>
+    <string name="reset">Reset</string>
+    <string name="reset_password">Reset Password??</string>
+    <string name="todo">TODO</string>
+    <string name="you_ll_be_cooking_again_soon">You\'ll be cooking again soon!</string>
 </resources>
