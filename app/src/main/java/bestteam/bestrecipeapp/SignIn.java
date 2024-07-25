@@ -71,11 +71,14 @@ public class SignIn extends AppCompatActivity {
                             String userEmail = user.getEmail();
                             String toastString = String.format("Signed in as %s", userEmail);
 
+                            Intent i = new Intent(SignIn.this, Home.class);
+                            startActivity(i);
+
                             Toast.makeText(SignIn.this, toastString, Toast.LENGTH_SHORT).show();
 
                         }
                         else {
-                            // this toast should be be replaced with what we want to happen when the user fails to sign in
+                            // this toast should be replaced with what we want to happen when the user fails to sign in
                             Toast.makeText(SignIn.this, "Failed to sign in", Toast.LENGTH_SHORT).show();
                         }
                     }
