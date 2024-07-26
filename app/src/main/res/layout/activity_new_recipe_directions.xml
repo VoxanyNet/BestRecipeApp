@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddDirections">
 
-</LinearLayout>
+    <TextView
+            android:id="@+id/step_title_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What are the steps to cook the recipe?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+    <EditText
+            android:id="@+id/step_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Step Title"
+            android:background="@drawable/"
+            app:layout_constraintTop_toBottomOf="@id/step_title_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+    <EditText
+            android:id="@+id/step_description"
+            android:layout_width="380dp"
+            android:layout_height="83dp"
+            android:hint="Add Steps"
+            android:background="@drawable/"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@id/step_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+    <Button
+            android:id="@+id/add_step_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add a new step"
+            android:backgroundTint="#AAAAAA"
+            app:layout_constraintTop_toBottomOf="@id/step_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+    <Button
+            android:id="@+id/post_recipe_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Post Recipe"
+            android:backgroundTint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
