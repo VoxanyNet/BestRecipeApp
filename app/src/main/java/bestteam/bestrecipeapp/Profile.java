@@ -33,6 +33,8 @@ public class Profile extends AppCompatActivity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
 
+    // private imports for every part of the user information
+
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private FirebaseStorage storage;
@@ -66,6 +68,11 @@ public class Profile extends AppCompatActivity {
         loadUserProfile();
     }
 
+
+
+
+    // function for saving the changes made to the profile when that is made available for the user
+
     private void saveUserProfile(String name, String email, String profileImageUrl) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -74,10 +81,13 @@ public class Profile extends AppCompatActivity {
             userData.put("name", name);
             userData.put("email", email);
             userData.put("profileImageUrl", profileImageUrl);
+         // any and all other information that the user can personally change will have to go here
 
+
+            // this here listens for when it gets actually saved
+            // we can change to Toasts here to say whatever we want them to after saving personal changes
             db.collection("users").document(user.getUid())
-                    .set(userData)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    .set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(Profile.this, "Profile updated", Toast.LENGTH_SHORT).show();
@@ -91,6 +101,9 @@ public class Profile extends AppCompatActivity {
                     });
         }
     }
+
+    // this super confusing function is to bring up the saved user profile information from firebase
+    // this is unfinished I have to find a way to add Name, Email, and photo and etc but it is very very confusing sorry
 
     private void loadUserProfile() {
         FirebaseUser user = mAuth.getCurrentUser();
@@ -123,6 +136,8 @@ public class Profile extends AppCompatActivity {
         }
     }
 
+// a method to create an image request on the android
+
     private void openFileChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -130,12 +145,28 @@ public class Profile extends AppCompatActivity {
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            imageUri = data.getData();
-            uploadImageToFirebase();
+
+
+    // function that takes the actual
+
+    private void updateProfileImage(String url) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+            // this here gains the access to the firebase through db.collection('users')--
+            DocumentReference userRef = db.collection("users").document(user.getUid());
+            // this updates the profileImage section of the userRef and attaches a listener
+            // we can make whatever we want to happen after pressing
+            userRef.update("profileImageUrl", url).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Glide.with(Profile.this).load(url).into(profileImage);
+                        Toast.makeText(Profile.this, "Profile image updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(Profile.this, "Failed to update profile image", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
         }
     }
 
@@ -162,23 +193,19 @@ public class Profile extends AppCompatActivity {
         }
     }
 
-    private void updateProfileImage(String url) {
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            DocumentReference userRef = db.collection("users").document(user.getUid());
-            userRef.update("profileImageUrl", url).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Glide.with(Profile.this).load(url).into(profileImage);
-                        Toast.makeText(Profile.this, "Profile image updated", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(Profile.this, "Failed to update profile image", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+
+    // this here takes the image request that was sent, uses imageUri
+    // does uploadImageToFirebase
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            imageUri = data.getData();
+            uploadImageToFirebase();
         }
     }
+
+
 
 
 }
