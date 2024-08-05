@@ -41,7 +41,7 @@ public class Profile extends AppCompatActivity {
     private ImageView profileImage;
     private Button uploadButton;
     private Uri imageUri;
-    //private TextView profileName;
+    private TextView profileName;
     private TextView profileEmail;
 
     @Override
@@ -54,9 +54,15 @@ public class Profile extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
 
         profileImage = findViewById(R.id.profileImage);
-        //profileName = findViewById(R.id.profileName);
-        profileEmail = findViewById(R.id.profileEmail);
         uploadButton = findViewById(R.id.uploadButton);
+
+
+        // I am starting the edit profile button functionality here I will finish it soon
+
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {}
+        })
 
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,8 +90,6 @@ public class Profile extends AppCompatActivity {
          // any and all other information that the user can personally change will have to go here
 
 
-            // this here listens for when it gets actually saved
-            // we can change to Toasts here to say whatever we want them to after saving personal changes
             db.collection("users").document(user.getUid())
                     .set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -101,9 +105,6 @@ public class Profile extends AppCompatActivity {
                     });
         }
     }
-
-    // this super confusing function is to bring up the saved user profile information from firebase
-    // this is unfinished I have to find a way to add Name, Email, and photo and etc but it is very very confusing sorry
 
     private void loadUserProfile() {
         FirebaseUser user = mAuth.getCurrentUser();
@@ -123,7 +124,7 @@ public class Profile extends AppCompatActivity {
                                 if (document.exists()) {
                                     Map<String, Object> userData = document.getData();
                                     if (userData != null) {
-                                        //profileName.setText(userData.get("name").toString());
+                                        profileName.setText(userData.get("name").toString());
                                         String profileImageUrl = (String) userData.get("profileImageUrl");
                                         if (profileImageUrl != null) {
                                             Glide.with(Profile.this).load(profileImageUrl).into(profileImage);
@@ -147,15 +148,12 @@ public class Profile extends AppCompatActivity {
 
 
 
-    // function that takes the actual
+    // function that tries and takes the actual jpg image from the user
 
     private void updateProfileImage(String url) {
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
-            // this here gains the access to the firebase through db.collection('users')--
             DocumentReference userRef = db.collection("users").document(user.getUid());
-            // this updates the profileImage section of the userRef and attaches a listener
-            // we can make whatever we want to happen after pressing
             userRef.update("profileImageUrl", url).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
@@ -194,8 +192,8 @@ public class Profile extends AppCompatActivity {
     }
 
 
-    // this here takes the image request that was sent, uses imageUri
-    // does uploadImageToFirebase
+    //uploads image to firebase
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
