@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RecipeDescriptionActivity extends AppCompatActivity {
+public class NewRecipePost extends AppCompatActivity {
 
     private Button btnNext;
     private ImageView ivBack;
@@ -66,7 +66,7 @@ public class RecipeDescriptionActivity extends AppCompatActivity {
                 String recipeTitle = etRecipeTitle.getText().toString();
                 String recipeDescription = etRecipeDescription.getText().toString();
 
-                Intent intent = new Intent(RecipeDescriptionActivity.this, AddIngredients.class);
+                Intent intent = new Intent(NewRecipePost.this, AddIngredients.class);
                 intent.putExtra("RECIPE_TITLE", recipeTitle);
                 intent.putExtra("RECIPE_DESCRIPTION", recipeDescription);
                 intent.putExtra("DIFFICULTY", difficulty);
