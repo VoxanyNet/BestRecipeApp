@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <!-- Post Title -->
+            <TextView
+                    android:id="@+id/postTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Post Title"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="8dp" />
+
+            <!-- Author -->
+            <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Author"
+                    android:textSize="18sp"
+                    android:textColor="#888888"
+                    android:paddingBottom="16dp" />
+
+            <!-- Body Text -->
+            <TextView
+                    android:id="@+id/bodyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text= "Lorem ipsum odor amet, consectetuer adipiscing elit. Posuere massa aptent molestie pellentesque quis nunc. Habitasse integer tellus; efficitur dolor pharetra est vulputate nunc. Ridiculus massa ac convallis pellentesque nisi semper. Ridiculus etiam maecenas ultricies mauris natoque diam laoreet. Luctus parturient accumsan mauris laoreet venenatis nunc taciti. Nisi montes nibh mi gravida morbi potenti. Penatibus pulvinar torquent dui; tellus quam natoque proin? Etiam congue accumsan porta convallis platea. Tristique nisl varius montes facilisis felis integer?
+
+Id viverra dictum pretium duis turpis dictum mollis. Erat et ridiculus auctor scelerisque aliquet, aenean montes penatibus. Habitasse eget litora justo vehicula faucibus. Venenatis ut morbi ante nostra finibus sodales. Neque litora himenaeos nunc et lectus venenatis tincidunt ad. Sodales dui condimentum maecenas justo dignissim himenaeos.
+
+Est iaculis curae non curae conubia dis. Enim condimentum tortor nisl congue pharetra adipiscing imperdiet. Ultrices libero parturient vitae taciti porta aptent pretium. Condimentum nam class semper facilisi enim consequat aptent nascetur. Faucibus per lacinia quam vitae viverra praesent dapibus. Leo morbi ullamcorper praesent diam cursus. Tellus bibendum vel dictumst turpis; magna maximus mauris. Interdum viverra leo imperdiet per primis lacinia.
+
+Sit porttitor integer et gravida lacus torquent. Euismod nisi dignissim augue integer tempus bibendum per sed. Platea accumsan per convallis integer vulputate ante. Taciti vitae purus netus; parturient consequat laoreet semper at. Primis vel varius quisque imperdiet elementum dis lacinia aptent sociosqu. Fames hendrerit magna sem phasellus, pellentesque facilisis duis. Tristique neque sem massa vitae interdum ipsum nascetur.
+
+Est quis mauris penatibus blandit fringilla? Arcu sollicitudin duis eleifend libero luctus. Euismod eu aliquam odio orci tortor cubilia pharetra leo. Sollicitudin fringilla sodales mollis nullam dapibus tempor, phasellus congue dolor. Nam per nam taciti volutpat phasellus convallis cursus. Nibh commodo purus elit dis, habitasse natoque sociosqu.
+
+Nam velit fringilla interdum augue in molestie eget ut est. Netus metus parturient tempus primis convallis per ac. Efficitur duis tempor platea malesuada; ultricies ipsum feugiat ridiculus. Convallis eros purus mi, phasellus cras torquent mi. Lacus odio feugiat interdum morbi enim. Semper ante interdum erat luctus vel quam.
+
+Cursus efficitur accumsan primis dapibus egestas nostra dictum facilisi. Tellus eros dignissim vulputate libero ac luctus. Habitant dis lacinia iaculis penatibus, vel magnis inceptos integer. Id natoque parturient mollis urna suscipit vel ornare ipsum. Elit vel montes posuere porttitor venenatis facilisi parturient commodo. Vestibulum dolor ornare eros fames posuere diam. Augue fringilla non magnis ex eget sit leo. Mi orci arcu ex; mattis conubia porttitor egestas. Rutrum iaculis fusce platea facilisis maximus nisl risus ac elementum.
+
+Semper primis ultricies varius eros sollicitudin. Et arcu felis blandit mollis aliquam varius etiam. Efficitur sagittis placerat leo himenaeos primis consectetur facilisis sapien. Turpis accumsan volutpat pellentesque porttitor cursus praesent dui. Mollis facilisis porta lorem pretium senectus. Eros varius ultrices proin, imperdiet maecenas urna. Eu ridiculus tristique mattis urna pellentesque facilisis fames. Imperdiet lacinia sodales; et venenatis elit commodo turpis lacus iaculis. Nibh quis torquent tincidunt efficitur semper euismod. Taciti lacus proin potenti augue a morbi id nullam morbi.
+
+Primis consectetur ultrices nullam convallis mattis laoreet primis condimentum. Posuere finibus sagittis sapien risus; purus odio. Consectetur facilisis magnis torquent venenatis ligula. Facilisis dignissim parturient viverra congue; ante class urna. Facilisi convallis mus pulvinar libero velit fusce. Proin libero per semper luctus, vel faucibus hac. Accumsan lectus eleifend magnis ridiculus felis vitae dapibus. Luctus elementum curae morbi porta praesent litora ridiculus ut class. Ullamcorper augue feugiat faucibus finibus dignissim dictumst ornare inceptos.
+
+Justo et pellentesque at nam finibus nisi. Natoque dui tristique parturient vivamus vestibulum at lectus ultricies. Penatibus volutpat praesent cursus ultrices felis cras curae vehicula. Mattis curae condimentum nunc vulputate dapibus; sem rutrum. Lacinia duis netus lobortis praesent sem lacus maximus. Velit euismod luctus phasellus at blandit nunc. Integer sagittis primis posuere lacinia consequat odio?
+
+Natoque curae ridiculus nulla ac mauris taciti mi. Iaculis pharetra imperdiet duis eros pharetra eros. Nunc nulla porta nulla orci; tortor justo. Orci dui est accumsan volutpat enim leo taciti porttitor. Velit justo arcu odio praesent justo consequat? Cubilia finibus erat consectetur senectus cubilia aenean lorem senectus. Quam ac feugiat curabitur rhoncus; class sapien blandit porta imperdiet. Ornare netus elit dui dignissim lacinia duis. Aliquam feugiat magnis auctor facilisis neque tortor in aptent imperdiet.
+
+Fermentum vestibulum facilisis pharetra per lectus velit. Tristique ex dolor porttitor inceptos; mi elementum est. Elementum rutrum venenatis fames congue nunc; sed erat. Pulvinar ultricies ornare conubia elementum class, dis sagittis urna platea. Phasellus mi litora facilisis sit lacinia interdum augue lorem class. Orci sit montes praesent parturient maximus. Finibus facilisis enim tincidunt sagittis senectus aptent tempor. Nascetur urna arcu habitasse habitasse morbi cubilia.
+
+Dignissim sit primis class, fringilla etiam tellus quis magnis. Gravida nullam orci sollicitudin rutrum mus inceptos. Diam accumsan magnis ultrices fames pellentesque pretium laoreet laoreet nisi? Sit dui ornare viverra sociosqu nascetur, a ante nec. Natoque rhoncus odio fusce id non mauris. At tempus morbi facilisis at nascetur egestas.
+
+Maximus ornare ridiculus ac convallis auctor felis fermentum egestas auctor. Consectetur duis non finibus quam venenatis. Est sapien tempor facilisis a platea. Odio sapien libero habitasse turpis sed adipiscing. Nunc morbi ridiculus malesuada pellentesque, dui penatibus. Lacus suscipit taciti hac sed vitae ante tortor. Pretium a hac dolor nascetur venenatis penatibus elementum lectus. Nisl bibendum conubia congue sagittis ipsum nisl ex elit.
+
+Fames cras torquent habitant mollis dictum nibh condimentum condimentum. Suspendisse est eu lacinia aptent pellentesque aptent? Aliquam facilisi orci himenaeos pulvinar per varius. Aenean facilisis suspendisse erat pellentesque ad elit scelerisque gravida lacinia? Adipiscing curabitur luctus urna euismod luctus sed turpis sollicitudin. At erat dolor integer integer auctor morbi velit. Taciti ante dignissim, fermentum sit fames fermentum.
+
+Dolor curabitur posuere duis aenean vulputate mus quam. Interdum lectus curabitur inceptos donec; lobortis et elit non. Duis ex purus nostra tellus consectetur nisl sapien class. Malesuada faucibus eu varius sociosqu enim in praesent. Feugiat curae rhoncus ullamcorper ligula metus diam phasellus. Fames porta et velit luctus taciti gravida hac eros. Netus sem dis suspendisse, vitae ex risus.
+
+Nibh auctor ipsum nostra turpis a maecenas mattis? Sapien at justo senectus risus facilisi semper scelerisque. Malesuada blandit nibh; sociosqu tellus scelerisque amet natoque. Blandit elementum sociosqu habitant integer enim. Vehicula facilisis per viverra laoreet justo. Cursus dis ante fames bibendum arcu sem iaculis consectetur. Ipsum tempor nec finibus sapien nullam orci dignissim ex ullamcorper. Egestas semper consequat tristique dignissim lectus.
+
+Arcu sit tincidunt; enim netus quam porta neque sed. Ipsum eget mus duis inceptos justo. Egestas rhoncus senectus orci penatibus sodales taciti natoque. Fermentum eleifend quam pellentesque amet nulla molestie. Habitant malesuada mattis donec a amet? Feugiat placerat consectetur ad ex risus lacinia tristique suspendisse. Libero adipiscing feugiat vitae commodo taciti interdum lorem velit?
+
+Praesent elit himenaeos justo urna maecenas laoreet. Facilisis purus quam luctus justo facilisis accumsan nostra. Dui mollis nisi curae tellus ac cubilia. Purus facilisi aenean nascetur dictum maecenas. Ad suscipit sit dui vivamus tellus ac bibendum. Cubilia ornare vel sociosqu tortor netus turpis. Nisl varius tristique scelerisque aenean elementum netus. Nibh pellentesque quam fusce arcu lorem faucibus hac curae bibendum. Torquent libero fringilla; taciti consectetur augue netus.
+
+Donec platea luctus aenean tincidunt faucibus nibh accumsan velit. Etiam scelerisque felis convallis lectus venenatis viverra feugiat montes. Hendrerit pulvinar id justo cubilia dignissim netus. Sem nisi dapibus litora conubia dolor semper nostra non inceptos. Id magnis netus curae mus condimentum placerat magna. Pharetra est faucibus nostra tristique suspendisse quisque placerat? Vivamus nisl eleifend dictum mollis pretium facilisis natoque porta. Suscipit sit class primis ad tincidunt convallis commodo pellentesque."
+                    android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
