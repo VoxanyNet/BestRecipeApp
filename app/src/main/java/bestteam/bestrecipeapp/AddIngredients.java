@@ -1,5 +1,6 @@
 package bestteam.bestrecipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,11 +13,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class AddIngredients extends AppCompatActivity {
 
     private EditText etAddIngredients;
     private LinearLayout ingredientsListLayout;
     private Button addIngredientButton, btnNext;
+
+    // List to store ingredients
+    private ArrayList<String> ingredientsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,9 @@ public class AddIngredients extends AppCompatActivity {
         ingredientsListLayout = findViewById(R.id.ingredientsListLayout);
         addIngredientButton = findViewById(R.id.addIngredientButton);
         btnNext = findViewById(R.id.btnNext);
+
+        // Initialize the ingredients list
+        ingredientsList = new ArrayList<>();
 
         addIngredientButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +51,14 @@ public class AddIngredients extends AppCompatActivity {
             }
         });
     }
-    //when "Add Ingredient" button is pressed, get string, add to ingredient_item.xml, ...
-    // add ingredient_item to ingredientListLayout section in "activity_new_recipe_ingredents.xml
+
     private void addIngredient() {
         String ingredientText = etAddIngredients.getText().toString();
         if (!TextUtils.isEmpty(ingredientText)) {
+            // Add ingredient to the list
+            ingredientsList.add(ingredientText);
+
+            // Inflate and add the view to the layout
             View ingredientView = LayoutInflater.from(this).inflate(R.layout.ingredient_item, ingredientsListLayout, false);
             TextView tvIngredientName = ingredientView.findViewById(R.id.tvIngredientName);
             tvIngredientName.setText(ingredientText);
@@ -59,8 +71,24 @@ public class AddIngredients extends AppCompatActivity {
     }
 
     private void goToNextStep() {
-        // This will take us to the next step, --NOT COMPLETE--
-        Toast.makeText(this, "Go to next step", Toast.LENGTH_SHORT).show();
+        if (ingredientsList.isEmpty()) {
+            Toast.makeText(this, "Please add at least one ingredient", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Retrieve the data passed from the previous activity (NewRecipePost)
+        String recipeTitle = getIntent().getStringExtra("RECIPE_TITLE");
+        String recipeDescription = getIntent().getStringExtra("RECIPE_DESCRIPTION");
+        String difficulty = getIntent().getStringExtra("DIFFICULTY");
+
+        // Create an intent to go to the AddDirections activity
+        Intent intent = new Intent(AddIngredients.this, AddDirections.class);
+        intent.putExtra("RECIPE_TITLE", recipeTitle);
+        intent.putExtra("RECIPE_DESCRIPTION", recipeDescription);
+        intent.putExtra("DIFFICULTY", difficulty);
+        intent.putStringArrayListExtra("INGREDIENTS_LIST", ingredientsList);
+
+        // Start the next activity
+        startActivity(intent);
     }
 }
-
