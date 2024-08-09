@@ -78,8 +78,13 @@ public class NewRecipePost extends AppCompatActivity {
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(NewRecipePost.this, Home.class);
+                // Clear the back stack to prevent going back to this activity
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish(); // Close the current activity
             }
         });
+
     }
 }
