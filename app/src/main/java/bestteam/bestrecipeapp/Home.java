@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Home extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +41,10 @@ public class Home extends AppCompatActivity {
                     // assemble recipe models from response
                     for (QueryDocumentSnapshot document : response.getResult()) {
 
+                        RecipePost post = RecipePost.fromDocument(document);
+
                         recipes.add(
-                            new RecipePost(
-                                document.get("title").toString(),
-                                document.get("author").toString(),
-                                document.get("description").toString()
-                            )
+                            post
                         );
                     }
 
@@ -56,8 +53,8 @@ public class Home extends AppCompatActivity {
 
                     // add the fragment to the activity
                     getSupportFragmentManager().beginTransaction()
-                            .add(R.id.fragmentContainerView, fragment)
-                            .commit();
+                        .add(R.id.fragmentContainerView, fragment)
+                        .commit();
 
                 }
 
@@ -69,17 +66,6 @@ public class Home extends AppCompatActivity {
             }
         });
 
-
-
-//        for (int i = 0; i < 100; i++) {
-//            recipes.add(
-//                    new RecipePost(
-//                            "Example Title",
-//                            "Author",
-//                            "Description"
-//                    )
-//            );
-//        }
 
     }
 }
