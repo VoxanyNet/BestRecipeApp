@@ -18,9 +18,7 @@ import java.util.regex.Pattern;
 public class Reset extends AppCompatActivity
 {
 
-    private Button buttonPwsReset;
     private EditText editTextPwsResetEmail;
-    private FirebaseAuth authProfile;
 
 
     @Override
@@ -30,7 +28,7 @@ public class Reset extends AppCompatActivity
         setContentView(R.layout.reset);
 
         editTextPwsResetEmail = findViewById(R.id.email_input);
-        buttonPwsReset = findViewById(R.id.reset_btn);
+        Button buttonPwsReset = findViewById(R.id.reset_btn);
 
         buttonPwsReset.setOnClickListener(new View.OnClickListener()
         {
@@ -51,7 +49,7 @@ public class Reset extends AppCompatActivity
                 else {
                     resetPassword(email);
                 }
-                
+
             }
         });
 
@@ -59,7 +57,7 @@ public class Reset extends AppCompatActivity
 
     private void resetPassword(String email)
     {
-        authProfile = FirebaseAuth.getInstance();
+        FirebaseAuth authProfile = FirebaseAuth.getInstance();
         authProfile.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
