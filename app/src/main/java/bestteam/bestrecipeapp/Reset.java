@@ -37,7 +37,6 @@ public class Reset extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 String email = editTextPwsResetEmail.getText().toString();
-
                 if(email.isEmpty())
                 {
                     Toast.makeText(Reset.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
