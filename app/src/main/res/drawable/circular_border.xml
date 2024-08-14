@@ -3,6 +3,6 @@
         <solid android:color="@android:color/transparent"/> <!-- Transparent fill -->
         <stroke
                 android:width="2dp"
-                android:color="#000000"/> <!-- Border width and color -->
+                android:color="#FFFFFF"/> <!-- Border width and color -->
         <corners android:radius="75dp"/> <!-- Large radius for circular shape -->
     </shape>

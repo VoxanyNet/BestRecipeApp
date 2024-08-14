@@ -71,7 +71,7 @@ public class SignIn extends AppCompatActivity {
                             String userEmail = user.getEmail();
                             String toastString = String.format("Signed in as %s", userEmail);
 
-                            Intent i = new Intent(SignIn.this, Home.class);
+                            Intent i = new Intent(SignIn.this, Profile.class);
                             startActivity(i);
 
                             Toast.makeText(SignIn.this, toastString, Toast.LENGTH_SHORT).show();

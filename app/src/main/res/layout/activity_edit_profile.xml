@@ -19,29 +19,54 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
-            <TextView
+            <Button
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/uploadButton"
+                    android:layout_width="151dp"
+                    android:layout_height="39dp"
+                    android:text="Change Image"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="164dp" android:layout_marginEnd="128dp"/>
+
+            <Button
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/saveButton"
+                    android:layout_width="85dp"
+                    android:layout_height="36dp"
+                    android:text="Save"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="200dp" android:layout_marginEnd="24dp"/>
+            <Button
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/cancelButton"
+                    android:layout_width="94dp"
+                    android:layout_height="38dp"
+                    android:text="Cancel"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="160dp" android:layout_marginEnd="16dp"/>
+            <EditText
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/profileEmail"
+                    android:layout_width="213dp"
+                    android:layout_height="72dp"
+                    android:text="Email"
+                    android:layout_marginTop="180dp" android:layout_marginEnd="192dp"/>
+            <EditView
                     android:id="@+id/profileName"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Name"
                     android:textSize="20sp"
-                    android:layout_marginTop="16dp" android:layout_marginEnd="328dp"/>
-
-            <TextView
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/profileEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Email"
-                    android:textSize="16sp"
-                    android:layout_marginTop="180dp" android:layout_marginEnd="352dp"/>
+                    android:layout_marginTop="36dp" android:layout_marginEnd="320dp"/>
             <ImageView
                     android:contentDescription="@+id/profileImage"
                     android:id="@+id/profileImage"
@@ -51,20 +76,8 @@
                     android:src="@drawable/default_profile_image"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="36dp"
-                    android:layout_marginEnd="40dp"/>
-            <ImageButton
-                    android:contentDescription="@+id/editProfileButton"
-                    android:id="@+id/editProfileButton"
-                    android:layout_width="82dp"
-                    android:layout_height="52dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/profileImage"
-                    android:src="@drawable/edit_profile_icon"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintHorizontal_bias="0.951"/>
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="144dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
