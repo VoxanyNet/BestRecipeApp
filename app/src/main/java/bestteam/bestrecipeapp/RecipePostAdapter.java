@@ -1,6 +1,9 @@
 package bestteam.bestrecipeapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 // this class is very weird
 // we give it raw posts data, then formats the data into layouts
@@ -33,7 +38,9 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
         // pretty sure that we are upcasting here
         View view = inflater.inflate(R.layout.post, parent, false);
 
-        return new RecipePostViewHolder(view);
+        RecipePost post = recipePosts.get(i);
+
+        return new RecipePostViewHolder(view, post, context);
     }
 
     @Override
@@ -43,6 +50,8 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
 
         // retrieve the recipe post at the provided position
         RecipePost post = recipePosts.get(position);
+
+        postViewHolder.post = post;
 
         // we should instead load recipes directly from firebase as the user scrolls
         postViewHolder.recipePostAuthor.setText(post.author);
@@ -63,13 +72,44 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
         TextView recipePostAuthor;
         TextView recipePostDescription;
 
-        public RecipePostViewHolder(@NonNull @NotNull View itemView) {
+        // store the associated post class
+        RecipePost post;
+
+        Context context;
+
+        public RecipePostViewHolder(@NonNull @NotNull View itemView, RecipePost post, Context context) {
             super(itemView);
 
             // actually retrieve the Views from the layout
             recipePostTitle = itemView.findViewById(R.id.recipePostTitle);
             recipePostAuthor = itemView.findViewById(R.id.recipePostAuthor);
             recipePostDescription = itemView.findViewById(R.id.recipePostDescription);
+
+            this.post = post;
+            this.context = context;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(context, PostView.class);
+
+                    // convert the post details to serializable versions
+                    String post_date = post.creation_date.toString();
+                    String title = post.title;
+                    String description = post.description;
+                    String author = post.author;
+
+                    intent.putExtra("POST_DATE", post_date);
+                    intent.putExtra("TITLE", title);
+                    intent.putExtra("DESCRIPTION", description);
+                    intent.putExtra("AUTHOR", author);
+
+                    startActivity(context, intent, Bundle.EMPTY);
+                }
+            });
+
         }
     }
 }
