@@ -5,6 +5,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.*;
@@ -59,7 +60,7 @@ public class Home extends AppCompatActivity {
                 }
 
                 else {
-                    Log.println(Log.ERROR, "test", "Fail");
+
 
                     Toast.makeText(Home.this, "Failed to fetch recipes", Toast.LENGTH_SHORT).show();
                 }
