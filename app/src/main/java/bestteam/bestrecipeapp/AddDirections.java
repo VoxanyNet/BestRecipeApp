@@ -113,6 +113,7 @@ public class AddDirections extends AppCompatActivity {
         intent.putStringArrayListExtra("INGREDIENTS_LIST", ingredientsList);
         intent.putStringArrayListExtra("STEP_TITLES", stepTitles);
         intent.putStringArrayListExtra("STEP_DESCRIPTIONS", stepDescriptions);
+
         startActivity(intent);
     }
 }
