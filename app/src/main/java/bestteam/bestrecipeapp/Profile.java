@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 import android.widget.ImageView;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseFirestore db;
     private ImageView profileImage;
     private TextView profileEmail, profileName;
+    private Button editProfileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,24 +38,24 @@ public class Profile extends AppCompatActivity {
         profileImage = findViewById(R.id.profileImage);
         profileEmail = findViewById(R.id.profileEmail);
         profileName = findViewById(R.id.profileName);
-        ImageButton editProfileButton = findViewById(R.id.editProfileButton);
+        editProfileButton = findViewById(R.id.editProfileButton);
 
-        editProfileButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                openEditProfile();
-            }
-        });
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
         loadUserProfile();
+
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editProfileButton(v);
+            }
+        });
+
     }
 
-    private void openEditProfile() {
-        Intent intent = new Intent(Profile.this, EditProfile.class);
-        startActivity(intent);
-    }
+
 
     private void loadUserProfile() {
         FirebaseUser user = mAuth.getCurrentUser();
@@ -85,6 +87,13 @@ public class Profile extends AppCompatActivity {
                     });
         }
     }
+
+    public void editProfileButton(View view) {
+        Intent i = new Intent(Profile.this, EditProfile.class);
+        startActivity(i);
+    }
+
+
 }
 
 

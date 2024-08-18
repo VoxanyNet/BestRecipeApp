@@ -1,35 +1,8 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="800dp"
-        android:height="800dp"
-        android:viewportWidth="20.109"
-        android:viewportHeight="20.109">
-
-    <group
-            android:name="edit-user-8"
-            android:translateX="-2"
-            android:translateY="-1.892">
-
-        <path
-                android:name="secondary"
-                android:fillColor="#2ca9bc"
-                android:pathData="M20.71,6.09L15.8,11H13V8.2l4.91-4.91a1,1,0,0,1,1.4,0l1.4,1.4a1,1,0,0,1,0,1.4Z"/>
-
-        <path
-                android:name="primary"
-                android:strokeColor="#000000"
-                android:strokeLineCap="round"
-                android:strokeLineJoin="round"
-                android:strokeWidth="2"
-                android:fillColor="@color/blue"
-                android:pathData="M20.71,6.09L15.8,11H13V8.2l4.91-4.91a1,1,0,0,1,1.4,0l1.4,1.4a1,1,0,0,1,0,1.4Z"/>
-
-        <path
-                android:name="primary-2"
-                android:strokeColor="#000000"
-                android:strokeLineCap="round"
-                android:strokeLineJoin="round"
-                android:strokeWidth="2"
-                android:fillColor="@color/blue"
-                android:pathData="M16.89,15A7,7,0,0,1,19,20a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1,7,7,0,0,1,3.06-5.78,1,1,0,0,0,.28-1.45A5.94,5.94,0,0,1,5,9a6,6,0,0,1,6.73-6,2.866,2.866,0,0,1,.65.12"/>
-    </group>
-</vector>
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent"/> <!-- Transparent fill -->
+    <stroke
+            android:width="2dp"
+            android:color="#FFFFFF"/> <!-- Border width and color -->
+    <corners android:radius="75dp"/> <!-- Large radius for circular shape -->
+</shape>

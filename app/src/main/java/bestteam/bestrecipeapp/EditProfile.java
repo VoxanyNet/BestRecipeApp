@@ -40,7 +40,6 @@ public class EditProfile extends AppCompatActivity {
     private EditText profileEmail, profileName;
     private Uri imageUri;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +67,7 @@ public class EditProfile extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveUserProfile(profileName.getText().toString(), profileEmail.getText().toString(), null);
-                finish();
+                saveUserProfile(profileName.getText().toString(), profileEmail.getText().toString());
             }
         });
 
@@ -81,22 +79,20 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
-    private void saveUserProfile(String name, String email, String profileImageUrl) {
+    private void saveUserProfile(String name, String email) {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
             Map<String, Object> userData = new HashMap<>();
             userData.put("name", name);
             userData.put("email", email);
-            if (profileImageUrl != null) {
-                userData.put("profileImageUrl", profileImageUrl);
-            }
 
             db.collection("users").document(user.getUid())
-                    .set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    .set(userData)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(EditProfile.this, "Profile updated", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
