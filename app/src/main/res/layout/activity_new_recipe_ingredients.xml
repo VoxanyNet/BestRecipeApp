@@ -48,7 +48,8 @@
             android:id="@+id/etAddIngredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Add Ingredients"
+            android:hint="Add Ingredient"
+            android:background="@android:drawable/editbox_background"
             android:padding="12dp"
             android:textSize="16sp"
             android:inputType="text"
@@ -56,17 +57,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp" />
-
-    <!-- List of Ingredients -->
-    <LinearLayout
-            android:id="@+id/ingredientsListLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/etAddIngredients"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
 
     <!-- Add Ingredient Button -->
     <Button
@@ -83,6 +73,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
+
+    <!-- List of Ingredients -->
+    <LinearLayout
+            android:id="@+id/ingredientsListLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/addIngredientButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
 
     <!-- Next Button -->
     <Button
