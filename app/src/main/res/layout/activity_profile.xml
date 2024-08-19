@@ -25,12 +25,12 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:id="@+id/profileName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="247dp"
+                    android:layout_height="62dp"
                     android:layout_gravity="center"
-                    android:text="Recipe Wizard"
+                    android:text="Foodie Extraordinaire"
                     android:textSize="20sp"
-                    android:layout_marginTop="52dp" android:layout_marginEnd="236dp"/>
+                    android:layout_marginTop="36dp" android:layout_marginEnd="156dp"/>
             <TextView
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
                     android:layout_gravity="center"
                     android:text="Email"
                     android:textSize="16sp"
-                    android:layout_marginTop="100dp" android:layout_marginEnd="224dp"/>
+                    android:layout_marginTop="96dp" android:layout_marginEnd="292dp"/>
             <ImageView
                     android:contentDescription="@+id/profileImage"
                     android:id="@+id/profileImage"

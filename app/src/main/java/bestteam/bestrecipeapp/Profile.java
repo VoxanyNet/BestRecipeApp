@@ -55,6 +55,12 @@ public class Profile extends AppCompatActivity {
 
     }
 
+    // a function to make sure the profile changes show immediately
+
+    protected void onResume() {
+        super.onResume();
+        loadUserProfile();
+    }
 
 
     private void loadUserProfile() {

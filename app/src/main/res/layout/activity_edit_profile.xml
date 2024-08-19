@@ -27,19 +27,20 @@
                     android:id="@+id/uploadButton"
                     android:layout_width="102dp"
                     android:layout_height="53dp"
-                    android:text="Change Image"
+                    android:backgroundTint="#4169E1"
+                    android:text="Image"
                     android:layout_gravity="center"
                     android:layout_marginTop="196dp" android:layout_marginEnd="44dp"/>
             <EditText
                     android:id="@+id/profileName"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_width="180dp"
-                    android:layout_height="48dp"
+                    android:layout_width="228dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:text="Recipe Wizard"
+                    android:text="Foodie"
                     android:textSize="20sp"
-                    android:layout_marginTop="64dp" android:layout_marginEnd="212dp"/>
+                    android:layout_marginTop="52dp" android:layout_marginEnd="168dp"/>
             <EditText
                     android:id="@+id/profileEmail"
                     app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +50,7 @@
                     android:layout_gravity="center"
                     android:text="Email"
                     android:textSize="20sp"
-                    android:layout_marginTop="172dp" android:layout_marginEnd="208dp"/>
+                    android:layout_marginTop="148dp" android:layout_marginEnd="208dp"/>
             <ImageView
                     android:contentDescription="@+id/profileImage"
                     android:id="@+id/profileImage"
@@ -67,14 +68,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/textView"
-                    android:layout_marginTop="152dp" android:layout_marginEnd="360dp"/>
+                    android:layout_marginTop="124dp" android:layout_marginEnd="356dp"/>
             <TextView
                     android:text="Name"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/textView2"
-                    android:layout_marginTop="44dp" android:layout_marginEnd="356dp"/>
+                    android:layout_marginTop="28dp" android:layout_marginEnd="364dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,7 +96,7 @@
             android:id="@+id/cancelButton"
             android:layout_width="102dp"
             android:layout_height="51dp"
-            android:backgroundTint="#B22222"
+            android:backgroundTint="#4682B4"
             android:text="Cancel"
             android:layout_gravity="center"
             android:layout_marginTop="60dp" android:layout_marginEnd="220dp"/>
