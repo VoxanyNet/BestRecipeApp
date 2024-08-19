@@ -24,6 +24,7 @@ public class Profile extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
 
+    private TextView followersView, followingView;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private ImageView profileImage;
@@ -35,10 +36,14 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
         profileImage = findViewById(R.id.profileImage);
         profileEmail = findViewById(R.id.profileEmail);
         profileName = findViewById(R.id.profileName);
         editProfileButton = findViewById(R.id.editProfileButton);
+
+        followersView = findViewById(R.id.followers);
+        followingView = findViewById(R.id.following);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -86,6 +91,10 @@ public class Profile extends AppCompatActivity {
                                         if (profileImageUrl != null) {
                                             Glide.with(Profile.this).load(profileImageUrl).into(profileImage);
                                         }
+                                        long followersCount = document.getLong("followersCount") != null ? document.getLong("followersCount") : 0;
+                                        long followingCount = document.getLong("followingCount") != null ? document.getLong("followingCount") : 0;
+                                        followersView.setText("Followers: " + followersCount);
+                                        followingView.setText("Following: " + followingCount);
                                     }
                                 }
                             }
