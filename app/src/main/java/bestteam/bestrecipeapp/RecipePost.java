@@ -15,6 +15,7 @@ public class RecipePost {
     public String description;
     public ZonedDateTime creation_date;
     public ArrayList<Ingredient> ingredients;
+    public ArrayList<RecipeStep> steps;
 
     public static RecipePost fromDocument(QueryDocumentSnapshot document) {
 
@@ -30,8 +31,9 @@ public class RecipePost {
 
         // somehow this casting works
         ArrayList<Ingredient> ingredients = (ArrayList<Ingredient>) document.get("ingredients");
+        ArrayList<RecipeStep> steps = (ArrayList<RecipeStep>) document.get("steps");
 
-        return new RecipePost(title, author, description, creation_date, ingredients);
+        return new RecipePost(title, author, description, creation_date, ingredients, steps);
 
     }
     public RecipePost(
@@ -39,12 +41,14 @@ public class RecipePost {
         String author,
         String description,
         ZonedDateTime creation_date,
-        ArrayList<Ingredient> ingredients
+        ArrayList<Ingredient> ingredients,
+        ArrayList<RecipeStep> steps
     ) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.creation_date = creation_date;
         this.ingredients = ingredients;
+        this.steps = steps;
     }
 }
