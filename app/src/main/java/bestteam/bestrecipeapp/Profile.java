@@ -100,8 +100,11 @@ public class Profile extends AppCompatActivity {
                             }
                         }
                     });
+
         }
     }
+
+
 
     public void editProfileButton(View view) {
         Intent i = new Intent(Profile.this, EditProfile.class);
