@@ -81,10 +81,10 @@
     </LinearLayout>
 
     <Button
-            android:id="@+id/post_recipe_button"
+            android:id="@+id/review_recipe_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Post Recipe"
+            android:text="Review Recipe"
             android:backgroundTint="@color/blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
