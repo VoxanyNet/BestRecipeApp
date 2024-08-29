@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="units_array">
+        <item>Tsp</item>
+        <item>Tbsp</item>
+        <item>Cups</item>
+        <item>Grams</item>
+        <item>Ounces</item>
+        <item>Pounds</item>
+    </string-array>
+</resources>
