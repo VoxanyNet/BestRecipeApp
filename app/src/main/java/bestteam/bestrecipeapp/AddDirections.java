@@ -19,7 +19,7 @@ public class AddDirections extends AppCompatActivity {
 
     private EditText stepTitleEditText, stepDescriptionEditText;
     private LinearLayout stepsListLayout;
-    private Button addStepButton, postRecipeButton;
+    private Button addStepButton, ReviewRecipeButton;
     private ArrayList<String> stepTitles = new ArrayList<>();
     private ArrayList<String> stepDescriptions = new ArrayList<>();
     private int stepCount = 0;
@@ -39,7 +39,7 @@ public class AddDirections extends AppCompatActivity {
         stepDescriptionEditText = findViewById(R.id.step_description);
         stepsListLayout = findViewById(R.id.steps_list_layout);
         addStepButton = findViewById(R.id.add_step_button);
-        postRecipeButton = findViewById(R.id.post_recipe_button);
+        ReviewRecipeButton = findViewById(R.id.review_recipe_button);
 
         // Retrieve data passed from AddIngredients activity
         Intent intent = getIntent();
@@ -56,7 +56,7 @@ public class AddDirections extends AppCompatActivity {
             }
         });
 
-        postRecipeButton.setOnClickListener(new View.OnClickListener() {
+        ReviewRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 reviewRecipe();

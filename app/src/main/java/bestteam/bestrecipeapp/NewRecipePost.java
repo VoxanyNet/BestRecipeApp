@@ -74,7 +74,7 @@ public class NewRecipePost extends AppCompatActivity {
             }
         });
 
-        // Optionally, set up the back button to finish the activity
+        // back button functionality to take back to "Home"
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
