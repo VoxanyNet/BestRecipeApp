@@ -3,6 +3,7 @@ package bestteam.bestrecipeapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,15 @@ public class FavoritesActivity extends AppCompatActivity {
             }
         });
 
-
+        // Set OnClickListener for the filters button
+        Button btnFilters = findViewById(R.id.btn_filters);
+        btnFilters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start FiltersActivity when the button is clicked
+                Intent intent = new Intent(FavoritesActivity.this, FiltersActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -4,4 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="filters">Filters</string>
     <string name="favorites">Favorites</string>
+    <string-array name="filter_options">
+        <item>Heart Filter</item>
+        <item>0-Star Rating</item>
+        <item>1-Star Rating</item>
+        <item>2-Star Rating</item>
+        <item>3-Star Rating</item>
+        <item>4-Star Rating</item>
+        <item>5-Star Rating</item>
+        <item>Recents</item>
+    </string-array>
 </resources>
