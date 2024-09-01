@@ -5,7 +5,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ReviewRecipePost">
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        tools:context=".ViewRecipePost">
 
     <!-- Back Button -->
     <ImageView

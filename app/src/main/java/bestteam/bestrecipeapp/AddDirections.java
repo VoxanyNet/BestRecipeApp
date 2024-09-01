@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -107,12 +109,28 @@ public class AddDirections extends AppCompatActivity {
 
         // Send to review recipe post page
         Intent intent = new Intent(AddDirections.this, ReviewRecipePost.class);
-        intent.putExtra("RECIPE_TITLE", recipeTitle);
-        intent.putExtra("RECIPE_DESCRIPTION", recipeDescription);
-        intent.putExtra("DIFFICULTY", difficulty);
-        intent.putStringArrayListExtra("INGREDIENTS_LIST", ingredientsList);
-        intent.putStringArrayListExtra("STEP_TITLES", stepTitles);
-        intent.putStringArrayListExtra("STEP_DESCRIPTIONS", stepDescriptions);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        ArrayList<RecipeStep> steps = new ArrayList<>();
+        for (int i = 0; i < stepTitles.size(); i++) {
+            steps.add(
+                    new RecipeStep(
+                            stepTitles.get(i),
+                            stepDescriptions.get(i)
+                    )
+            );
+        }
+
+        RecipePost newPost = new RecipePost(
+                recipeTitle,
+                user.getEmail(),
+                recipeDescription,
+                ingredientsList,
+                steps
+        );
+
+        intent.putExtra("POST", newPost);
 
         startActivity(intent);
     }

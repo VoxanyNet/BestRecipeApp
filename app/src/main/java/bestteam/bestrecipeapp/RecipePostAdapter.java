@@ -3,7 +3,6 @@ package bestteam.bestrecipeapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,18 +92,9 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(context, PostView.class);
+                    Intent intent = new Intent(context, ViewRecipePost.class);
 
-                    // convert the post details to serializable versions
-                    String post_date = post.creation_date.toString();
-                    String title = post.title;
-                    String description = post.description;
-                    String author = post.author;
-
-                    intent.putExtra("POST_DATE", post_date);
-                    intent.putExtra("TITLE", title);
-                    intent.putExtra("DESCRIPTION", description);
-                    intent.putExtra("AUTHOR", author);
+                    intent.putExtra("POST", post);
 
                     startActivity(context, intent, Bundle.EMPTY);
                 }

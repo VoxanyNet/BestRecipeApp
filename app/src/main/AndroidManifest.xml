@@ -39,9 +39,10 @@
                 android:name=".AddDirections"
                 android:exported="true"/>
         <activity
-                android:name=".ReviewRecipePost"
+                android:name=".ViewRecipePost"
                 android:exported="true"/>
-        <activity android:name=".PostView"/>
+        <activity android:name=".ReviewRecipePost"
+            android:exported="true"/>
 
         <meta-data
                 android:name="preloaded_fonts"
