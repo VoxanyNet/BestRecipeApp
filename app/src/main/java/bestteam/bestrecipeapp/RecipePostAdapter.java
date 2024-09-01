@@ -37,9 +37,7 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
         // pretty sure that we are upcasting here
         View view = inflater.inflate(R.layout.post, parent, false);
 
-        RecipePost post = recipePosts.get(i);
-
-        return new RecipePostViewHolder(view, post, context);
+        return new RecipePostViewHolder(view, context);
     }
 
     @Override
@@ -76,7 +74,7 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
 
         Context context;
 
-        public RecipePostViewHolder(@NonNull @NotNull View itemView, RecipePost post, Context context) {
+        public RecipePostViewHolder(@NonNull @NotNull View itemView, Context context) {
             super(itemView);
 
             // actually retrieve the Views from the layout
@@ -84,7 +82,6 @@ public class RecipePostAdapter extends RecyclerView.Adapter<RecipePostAdapter.Re
             recipePostAuthor = itemView.findViewById(R.id.recipePostAuthor);
             recipePostDescription = itemView.findViewById(R.id.recipePostDescription);
 
-            this.post = post;
             this.context = context;
 
             itemView.setOnClickListener(new View.OnClickListener() {
