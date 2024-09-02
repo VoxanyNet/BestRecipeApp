@@ -1,6 +1,9 @@
 package bestteam.bestrecipeapp;
 
+import android.content.Intent;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +11,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,6 +25,19 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         setContentView(R.layout.activity_home);
+
+        FloatingActionButton newPostButton = findViewById(R.id.newPostButton);
+
+        newPostButton.setOnClickListener(new View.OnClickListener() {
+            // this is the callback
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Home.this, NewRecipePost.class);
+
+                startActivity(intent);
+            }
+        });
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 

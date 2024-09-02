@@ -1,5 +1,6 @@
 package bestteam.bestrecipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,10 @@ public class ReviewRecipePost extends AppCompatActivity {
             public void onClick(View view) {
 
                 newPost.postToFirebase();
+
+                Intent intent = new Intent(ReviewRecipePost.this, Home.class);
+
+                startActivity(intent);
 
             }
         });

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class NewRecipePost extends AppCompatActivity {
 
     private Button btnNext;
-    private ImageView ivBack;
     private EditText etRecipeTitle, etRecipeDescription;
     private String difficulty;
 
@@ -21,7 +20,6 @@ public class NewRecipePost extends AppCompatActivity {
         setContentView(R.layout.activity_new_recipe_description);
 
         btnNext = findViewById(R.id.btnNext);
-        ivBack = findViewById(R.id.ivBack);
         etRecipeTitle = findViewById(R.id.etRecipeTitle);
         etRecipeDescription = findViewById(R.id.etRecipeDescription);
 
@@ -71,18 +69,6 @@ public class NewRecipePost extends AppCompatActivity {
                 intent.putExtra("RECIPE_DESCRIPTION", recipeDescription);
                 intent.putExtra("DIFFICULTY", difficulty);
                 startActivity(intent);
-            }
-        });
-
-        // Optionally, set up the back button to finish the activity
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(NewRecipePost.this, Home.class);
-                // Clear the back stack to prevent going back to this activity
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-                finish(); // Close the current activity
             }
         });
 
