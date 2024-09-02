@@ -25,6 +25,8 @@ public class SignIn extends AppCompatActivity {
         EditText editTextEmail = findViewById(R.id.inputTextEmail);
         EditText editTextPassword = findViewById(R.id.inputTextPassword);
 
+        TextView resetPasswordText = findViewById(R.id.forgotPassword);
+
         TextView registerText = findViewById(R.id.loginText);
 
         Button buttonSignIn = findViewById(R.id.loginButton);
@@ -43,6 +45,22 @@ public class SignIn extends AppCompatActivity {
                 signIn(email, password);
             }
         });
+
+        resetPasswordText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(editTextEmail.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(SignIn.this, "Sent reset email", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+            }
+        });
+
 
         // open register activity when clicking on register text
         registerText.setOnClickListener(new View.OnClickListener() {

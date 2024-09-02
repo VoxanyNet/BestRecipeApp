@@ -22,7 +22,7 @@ public class ViewRecipePost extends AppCompatActivity {
 
         RecipePost post = (RecipePost) getIntent().getSerializableExtra("POST");
 
-        Toast.makeText(ViewRecipePost.this, post.title, Toast.LENGTH_SHORT).show();
+        // Toast.makeText(ViewRecipePost.this, post.title, Toast.LENGTH_SHORT).show();
 
         // Create fragment instance with arguments
         ReviewRecipePostFragment fragment = new ReviewRecipePostFragment();
